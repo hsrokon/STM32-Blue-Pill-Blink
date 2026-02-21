@@ -94,8 +94,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);//Turns the built in LED on and OFF
-	  HAL_Delay(1000);
+	  //Blink 1
+	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//Turing on LED
+	  HAL_Delay(100);//waiting 100 MilLiseconds
+	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);//turning off LED
+	  HAL_Delay(150);//short pause
+
+	  //Blink 2
+	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//Turning on again
+	  HAL_Delay(100);//waiting 100 milliseconds
+	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);//Turning off LED
+
+	  //Pause 1 second
+	  HAL_Delay(1000);//1 Second pause
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
